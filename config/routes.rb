@@ -1,12 +1,12 @@
 Ativa::Application.routes.draw do
   devise_for :users
   resources :posts
-  root 'projects#index'
-  resources :project 
-    resources :subscriptions, only: [:create, :destroy]
-  end
+  
+  resources :projects
 
   get 'users/:id' => 'users#show', as: 'user'
+  root 'projects#index'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
